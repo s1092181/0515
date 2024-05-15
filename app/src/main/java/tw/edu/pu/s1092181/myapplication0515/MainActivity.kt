@@ -34,7 +34,7 @@ class MainActivity : ComponentActivity() {
                     modifier = Modifier.fillMaxSize(),
                     color = MaterialTheme.colorScheme.background
                 ) {
-                    Greeting("Android")
+//                    Greeting("Android")
                     PointerEvents()
                 }
             }
@@ -44,13 +44,7 @@ class MainActivity : ComponentActivity() {
 
 
 
-@Composable
-fun Greeting(name: String, modifier: Modifier = Modifier) {
-    Text(
-        text = "Hello $name!",
-        modifier = modifier
-    )
-}
+
 
 @Composable
 fun PointerEvents() {
@@ -73,37 +67,30 @@ fun PointerEvents() {
     }
 }
 
-@Composable
-fun Tap() {
-    var msg by remember { mutableStateOf("TAP相關手勢實例") }
+//@Composable
+//fun Tap() {
+//    var msg by remember { mutableStateOf("TAP相關手勢實例") }
+//
+//    Column {
+//        Text(text = msg)
+//
+//        Image(
+//            painter = painterResource(id = R.drawable.pu0),
+//            contentDescription = "靜宜之美",
+//            modifier = Modifier
+//                .fillMaxSize()
+//                .pointerInput(Unit) {
+//                    detectTapGestures(
+//                        onTap = {msg = "後觸發onTap(短按)"},
+//                        onDoubleTap = {msg = "雙擊"},
+//                        onLongPress = {msg = "長按"},
+//                        onPress = {msg = "先觸發onPress(按下)"}
+//                    )
+//                }
+//
+//        )
+//    }
+//}
+//
 
-    Column {
-        Text(text = msg)
 
-        Image(
-            painter = painterResource(id = R.drawable.pu0),
-            contentDescription = "靜宜之美",
-            modifier = Modifier
-                .fillMaxSize()
-                .pointerInput(Unit) {
-                    detectTapGestures(
-                        onTap = {msg = "後觸發onTap(短按)"},
-                        onDoubleTap = {msg = "雙擊"},
-                        onLongPress = {msg = "長按"},
-                        onPress = {msg = "先觸發onPress(按下)"}
-                    )
-                }
-
-        )
-    }
-}
-
-
-
-@Preview(showBackground = true)
-@Composable
-fun GreetingPreview() {
-    MyApplication0515Theme {
-        Greeting("Android")
-    }
-}
